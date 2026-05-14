@@ -93,7 +93,34 @@
     - “Summarise missed days”
 * Day 4+ → suggest:
     - Lite mode temporarily
+ 
+## Architecture
 
+### State Model
+`userState = {
+  consecrationId: "montfort",
+  currentDay: 7,
+  completedDays: [1,2,3,4,5,6],
+  startDate: "2026-05-01",
+  lastOpened: "2026-05-10",
+  mode: "guided",
+  streak: 6,
+  reflections: {
+    3: "text...",
+    5: "text..."
+  }
+}`
+
+### Missed Day Logic
+`if missedDays == 0:
+  show currentDay
+
+if missedDays == 1:
+  show next day (normal)
+
+if missedDays >= 2:
+  show “catch-up screen” first`
+  
 ## Rules
 * No cheap gamification
 * No guilt or shame
