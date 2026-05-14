@@ -1,5 +1,44 @@
 # Consecration
 
+## Core Loop
+1. Open app
+2. See current day immediately
+3. Read / listen
+4. (Optional) reflect
+5. Mark complete
+6. Leave peacefully
+
+## Modes
+1. Guided (default)
+    * Full content
+    * Standard pacing
+    * Gentle reminders
+
+2. Lite
+    * Shortened readings
+    * Essential prayers only
+    * Auto summaries for missed days
+
+3. Custom
+    * Rule-of-life editing
+    * Pacing control
+    * Optional extras
+  
+## Suggested plugin types:
+
+* Content Packs
+    - Consecrations (Marian, De Montfor, Joseph, etc.)
+ 
+* Enhancements
+    - Audio
+    - Bible integration
+    - Calendars
+  
+* UI Modes
+    - Lite mode logic
+    - Reflection/journal system
+
+## Features
 * Progressive web app
 * Based on St Louis de Montfort's consecration, updated
 * Built in tracker, keeps track of day, progress, streak etc.
@@ -46,6 +85,14 @@
 * Offline first readability
 * Frictionless daily use
 * Choose time of reminders
+
+### Catch-up Logic
+* Day +1: simple “resume”
+* Day +2–3 → offer:
+    - “Catch up in one session”
+    - “Summarise missed days”
+* Day 4+ → suggest:
+    - Lite mode temporarily
 
 ## Rules
 * No cheap gamification
