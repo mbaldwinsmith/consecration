@@ -73,36 +73,36 @@ This task plan translates `Plan.md` and `Architecture.md` into a phased, impleme
 ## Phase 1 — App Shell, Routing, and Theme (No-Flicker)
 
 ### 1.1 App shell bootstrapping
-- [ ] Implement `src/app/bootstrap.ts`:
-  - [ ] Load boot-critical settings (`theme`, `lastRoute`) from localStorage.
-  - [ ] Load minimal manifest pointer from cache/local bundle.
-  - [ ] Hydrate shell and route to resolved entry.
+- [x] Implement `src/app/bootstrap.ts`:
+  - [x] Load boot-critical settings (`theme`, `lastRoute`) from localStorage.
+  - [x] Load minimal manifest pointer from cache/local bundle.
+  - [x] Hydrate shell and route to resolved entry.
 
 ### 1.2 Routing
-- [ ] Implement `src/app/router.ts` with routes:
-  - [ ] `/today`
-  - [ ] `/day/:n`
-  - [ ] `/timeline`
-  - [ ] `/settings`
-  - [ ] `/catch-up`
-- [ ] Add route guards for invalid day numbers and unknown consecration IDs.
+- [x] Implement `src/app/router.ts` with routes:
+  - [x] `/today`
+  - [x] `/day/:n`
+  - [x] `/timeline`
+  - [x] `/settings`
+  - [x] `/catch-up`
+- [x] Add route guards for invalid day numbers and unknown consecration IDs.
 
 ### 1.3 Theme system and pre-paint init
-- [ ] Implement CSS tokens in `src/styles/tokens.css`.
-- [ ] Implement light/dark/system mapping in `src/styles/theme.css`.
-- [ ] Add inline `theme-init` script in HTML `<head>` to set `data-theme` before render.
-- [ ] Add reduce-motion and large-text base classes/toggles.
+- [x] Implement CSS tokens in `src/styles/tokens.css`.
+- [x] Implement light/dark/system mapping in `src/styles/theme.css`.
+- [x] Add inline `theme-init` script in HTML `<head>` to set `data-theme` before render.
+- [x] Add reduce-motion and large-text base classes/toggles.
 
 ### 1.4 Core layout
-- [ ] Build structural components:
-  - [ ] Header
-  - [ ] Day pager container
-  - [ ] Bottom action area
+- [x] Build structural components:
+  - [x] Header
+  - [x] Day pager container
+  - [x] Bottom action area
 
 **Phase 1 Exit Criteria**
-- [ ] Reloading does not produce light/dark flicker.
-- [ ] Direct navigation to core routes works.
-- [ ] Basic shell renders in <1s on repeat local loads (measure and note baseline).
+- [x] Reloading does not produce light/dark flicker.
+- [x] Direct navigation to core routes works.
+- [x] Basic shell renders in <1s on repeat local loads (measured dev-server `/today` response average: 34.74ms across five repeat requests).
 
 ---
 

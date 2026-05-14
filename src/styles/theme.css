@@ -1,25 +1,220 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background: var(--color-surface);
+  background: var(--color-canvas);
   color: var(--color-text);
   font-family: var(--font-body);
 }
 
+button {
+  min-height: 2.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-control);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font: inherit;
+  cursor: pointer;
+  transition:
+    background var(--motion-standard),
+    border-color var(--motion-standard),
+    color var(--motion-standard);
+}
+
+button:hover:not(:disabled) {
+  border-color: var(--color-accent);
+}
+
+button:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--color-accent) 55%, transparent);
+  outline-offset: 2px;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
 .app-shell {
-  width: min(100% - 2rem, 48rem);
+  display: grid;
+  width: min(100% - (var(--space-page) * 2), 62rem);
+  min-height: 100vh;
   margin: 0 auto;
-  padding: 4rem 0;
+  padding: 1.25rem 0 max(1.25rem, env(safe-area-inset-bottom));
+  grid-template-rows: auto auto 1fr auto;
+  gap: 1rem;
 }
 
-.app-shell h1 {
-  margin: 0 0 0.75rem;
-  font-size: clamp(2rem, 6vw, 3.5rem);
-  line-height: 1.05;
+.app-header,
+.day-pager,
+.route-view,
+.bottom-actions {
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-soft);
 }
 
-.app-shell p {
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: var(--radius-control);
+}
+
+.app-header h1,
+.route-view h2,
+.app-header p,
+.route-view p,
+.day-pager p {
   margin: 0;
+}
+
+.app-header h1 {
+  font-size: 1.25rem;
+  line-height: 1.1;
+}
+
+.app-header p,
+.route-view p,
+.day-pager p {
   color: var(--color-muted);
+}
+
+.app-header nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+
+.app-header nav button {
+  padding: 0 0.85rem;
+}
+
+.app-header nav button[aria-current="page"] {
+  border-color: var(--color-accent);
+  color: var(--color-accent-strong);
+}
+
+.day-pager {
+  display: grid;
+  grid-template-columns: 2.75rem 1fr 2.75rem;
+  align-items: center;
+  min-height: 4rem;
+  padding: 0.6rem;
+  border-radius: var(--radius-control);
+}
+
+.day-pager p {
+  justify-self: center;
+  font-weight: 700;
+}
+
+.icon-button {
+  width: 2.75rem;
+  padding: 0;
+  font-weight: 700;
+}
+
+.route-view {
+  display: grid;
+  align-content: start;
+  gap: 0.75rem;
+  padding: clamp(1.25rem, 5vw, 3rem);
+  border-radius: var(--radius-control);
+}
+
+.route-view h2 {
+  font-size: clamp(2rem, 8vw, 4.25rem);
+  line-height: 1;
+}
+
+.settings-panel {
+  display: grid;
+  gap: 0.9rem;
+  max-width: 28rem;
+  margin-top: 1rem;
+}
+
+.settings-panel fieldset {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.settings-panel legend {
+  width: 100%;
+  margin-bottom: 0.1rem;
+  font-weight: 700;
+}
+
+.settings-panel label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 2.25rem;
+  color: var(--color-text);
+  text-transform: capitalize;
+}
+
+.bottom-actions {
+  position: sticky;
+  bottom: max(1rem, env(safe-area-inset-bottom));
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border-radius: var(--radius-control);
+}
+
+.bottom-actions button {
+  width: 100%;
+  padding: 0 1rem;
+}
+
+.primary-action {
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+  color: var(--color-action-text);
+}
+
+.large-text {
+  font-size: 112.5%;
+}
+
+.reduce-motion * {
+  scroll-behavior: auto !important;
+  transition-duration: 0.01ms !important;
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+@media (max-width: 42rem) {
+  .app-header {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .app-header nav {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
