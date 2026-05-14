@@ -17,56 +17,56 @@ This task plan translates `Plan.md` and `Architecture.md` into a phased, impleme
 ## Phase 0 — Foundation, Tooling, and Repo Scaffolding
 
 ### 0.1 Initialize project structure
-- [ ] Create folder layout:
-  - [ ] `/src/app`
-  - [ ] `/src/domain/content`
-  - [ ] `/src/domain/progress`
-  - [ ] `/src/domain/modes`
-  - [ ] `/src/domain/catchup`
-  - [ ] `/src/domain/reflections`
-  - [ ] `/src/plugins`
-  - [ ] `/src/ui/views`
-  - [ ] `/src/ui/components`
-  - [ ] `/src/ui/gestures`
-  - [ ] `/src/infra/storage`
-  - [ ] `/src/infra/pwa`
-  - [ ] `/src/infra/notifications`
-  - [ ] `/src/styles`
-  - [ ] `/content/packs/montfort/days`
-  - [ ] `/content/packs/montfort/recurring`
-  - [ ] `/plugins/pack-montfort-core`
-  - [ ] `/plugins/enhancement-audio-default`
-  - [ ] `/scripts`
+- [x] Create folder layout:
+  - [x] `/src/app`
+  - [x] `/src/domain/content`
+  - [x] `/src/domain/progress`
+  - [x] `/src/domain/modes`
+  - [x] `/src/domain/catchup`
+  - [x] `/src/domain/reflections`
+  - [x] `/src/plugins`
+  - [x] `/src/ui/views`
+  - [x] `/src/ui/components`
+  - [x] `/src/ui/gestures`
+  - [x] `/src/infra/storage`
+  - [x] `/src/infra/pwa`
+  - [x] `/src/infra/notifications`
+  - [x] `/src/styles`
+  - [x] `/content/packs/montfort/days`
+  - [x] `/content/packs/montfort/recurring`
+  - [x] `/plugins/pack-montfort-core`
+  - [x] `/plugins/enhancement-audio-default`
+  - [x] `/scripts`
 
 ### 0.2 Configure project tooling
-- [ ] Add package manager config and lockfile.
-- [ ] Add TypeScript config (strict mode on).
-- [ ] Add linting and formatting setup.
-- [ ] Add scripts for:
-  - [ ] dev
-  - [ ] build
-  - [ ] test
-  - [ ] content:build
-  - [ ] content:validate
-- [ ] Add CI workflow skeleton (build + tests + content validation).
+- [x] Add package manager config and lockfile.
+- [x] Add TypeScript config (strict mode on).
+- [x] Add linting and formatting setup.
+- [x] Add scripts for:
+  - [x] dev
+  - [x] build
+  - [x] test
+  - [x] content:build
+  - [x] content:validate
+- [x] Add CI workflow skeleton (build + tests + content validation).
 
 ### 0.3 Define shared contracts early
-- [ ] Create `src/types/` with base types:
-  - [ ] `UserJourneyState`
-  - [ ] `DayContent`
-  - [ ] `Section`
-  - [ ] `RenderDayPlan`
-  - [ ] `PluginManifest`
-- [ ] Add `schemaVersion` constant and migration registry placeholders.
+- [x] Create `src/types/` with base types:
+  - [x] `UserJourneyState`
+  - [x] `DayContent`
+  - [x] `Section`
+  - [x] `RenderDayPlan`
+  - [x] `PluginManifest`
+- [x] Add `schemaVersion` constant and migration registry placeholders.
 
 ### 0.4 Set quality baseline
-- [ ] Add initial smoke test ensuring app shell builds.
-- [ ] Add README contributor instructions for running content build and tests.
+- [x] Add initial smoke test ensuring app shell builds.
+- [x] Add README contributor instructions for running content build and tests.
 
 **Phase 0 Exit Criteria**
-- [ ] Repo builds in local dev mode.
-- [ ] CI skeleton runs without failing configuration steps.
-- [ ] Shared types compile with no `any` leaks on core contracts.
+- [x] Repo builds in local dev mode.
+- [x] CI skeleton runs without failing configuration steps.
+- [x] Shared types compile with no `any` leaks on core contracts.
 
 ---
 
