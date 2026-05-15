@@ -243,29 +243,29 @@ This task plan translates `Plan.md` and `Architecture.md` into a phased, impleme
 ## Phase 6 — Day Rendering, Interactions, and Accessibility
 
 ### 6.1 Day view composition
-- [ ] Implement `day-view.ts` from `RenderDayPlan + DayContent`.
-- [ ] Section component supports collapse/expand.
-- [ ] Estimated time and phase metadata display.
+- [x] Implement `day-view.ts` from `RenderDayPlan + DayContent`.
+- [x] Section component supports collapse/expand.
+- [x] Estimated time and phase metadata display.
 
 ### 6.2 Gestures and completion interaction
-- [ ] Implement swipe day navigation.
-- [ ] Implement long-press complete with clear affordance and undo.
-- [ ] Prevent accidental completion on short tap.
+- [x] Implement swipe day navigation.
+- [x] Implement long-press complete with clear affordance and undo.
+- [x] Prevent accidental completion on short tap.
 
 ### 6.3 Accessibility hardening
-- [ ] Semantic heading hierarchy.
-- [ ] Keyboard support for all actions.
-- [ ] ARIA states for accordions and toggles.
-- [ ] Focus-visible styles and skip links.
+- [x] Semantic heading hierarchy.
+- [x] Keyboard support for all actions.
+- [x] ARIA states for accordions and toggles.
+- [x] Focus-visible styles and skip links.
 
 ### 6.4 Motion/visual refinement
-- [ ] Subtle scroll/reveal animations.
-- [ ] Ensure `prefers-reduced-motion` disables non-essential animation.
+- [x] Subtle scroll/reveal animations.
+- [x] Ensure `prefers-reduced-motion` disables non-essential animation.
 
 **Phase 6 Exit Criteria**
-- [ ] Daily loop is frictionless: open → read/listen → optional reflect → complete.
-- [ ] Major interactions work with keyboard and touch.
-- [ ] Accessibility checks pass automated baseline and manual smoke test.
+- [x] Daily loop is frictionless: open -> read/listen -> optional reflect -> complete.
+- [x] Major interactions work with keyboard and touch.
+- [x] Accessibility checks pass automated baseline and manual smoke test.
 
 ---
 

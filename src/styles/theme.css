@@ -34,6 +34,11 @@ button:focus-visible {
   outline-offset: 2px;
 }
 
+a:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--color-accent) 55%, transparent);
+  outline-offset: 2px;
+}
+
 button:disabled {
   cursor: not-allowed;
   opacity: 0.45;
@@ -135,6 +140,98 @@ button:disabled {
   line-height: 1;
 }
 
+.skip-link {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.skip-link:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  clip: auto;
+}
+
+.day-view {
+  display: grid;
+  gap: 1rem;
+  margin-top: 0.75rem;
+  touch-action: pan-y;
+}
+
+.day-view-header {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.day-view-header h2 {
+  font-size: clamp(1.6rem, 5vw, 2.5rem);
+  line-height: 1.05;
+}
+
+.day-sections {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.day-section {
+  display: grid;
+  gap: 0.5rem;
+  padding: 0.9rem 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.day-section h3 {
+  margin: 0;
+}
+
+.section-toggle {
+  width: 100%;
+  height: auto;
+  min-height: 2.75rem;
+  padding: 0.7rem 0.85rem;
+  text-align: left;
+}
+
+.section-toggle::after {
+  float: right;
+  content: "+";
+}
+
+.section-toggle[aria-expanded="true"]::after {
+  content: "-";
+}
+
+.section-body {
+  color: var(--color-text);
+  line-height: 1.65;
+}
+
+.section-body p {
+  margin: 0 0 0.75rem;
+}
+
+.completion-control {
+  display: grid;
+  gap: 0.5rem;
+  max-width: 24rem;
+}
+
+.completion-control p {
+  margin: 0;
+}
+
+.long-press-complete {
+  width: 100%;
+}
+
+.reveal-on-scroll {
+  animation: reveal-up 180ms ease-out both;
+}
+
 .settings-panel {
   display: grid;
   gap: 0.9rem;
@@ -221,6 +318,18 @@ button:disabled {
   transition-duration: 0.01ms !important;
   animation-duration: 0.01ms !important;
   animation-iteration-count: 1 !important;
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(0.25rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -12,6 +12,9 @@ import {
 } from './settings';
 import type { ThemePreference } from '../types';
 import { createCatchUpView } from '../ui/views/catch-up-view';
+import { getBundledDayContent } from '../domain/content/bundled-days';
+import { resolveDayPlan } from '../domain/modes/mode-policy';
+import { createDayView } from '../ui/views/day-view';
 
 export interface AppShellOptions {
   readonly manifest: AppManifestPointer;
@@ -28,7 +31,13 @@ export function createAppShell(options: AppShellOptions): HTMLElement {
 
   const header = createHeader(options.manifest.appName, activeConsecration.title, options.route);
   const dayPager = createDayPager(options.route, activeConsecration.totalDays);
-  const view = createView(options.route, activeConsecration.title, options.schemaVersion, options.settings);
+  const view = createView(
+    options.route,
+    activeConsecration.title,
+    activeConsecration.totalDays,
+    options.schemaVersion,
+    options.settings,
+  );
   const actions = createBottomActions(options.route);
 
   shell.append(header, dayPager, view, actions);
@@ -101,6 +110,7 @@ function createDayPager(route: AppRoute, totalDays: number): HTMLElement {
 function createView(
   route: AppRoute,
   consecrationTitle: string,
+  totalDays: number,
   schemaVersion: number,
   settings: BootSettings,
 ): HTMLElement {
@@ -122,6 +132,29 @@ function createView(
 
   if (route.name === 'catch-up') {
     view.append(createCatchUpView());
+  }
+
+  if (route.name === 'today' || route.name === 'day') {
+    const day = route.name === 'day' ? route.day : 1;
+    const dayContent = getBundledDayContent(settings.consecrationId, day);
+    const plan = resolveDayPlan({
+      mode: 'guided',
+      dayContent,
+      missedDays: 0,
+    });
+    view.append(
+      createDayView({
+        dayContent,
+        renderPlan: plan,
+        totalDays,
+        onNavigatePrevious: () => {
+          navigateTo(`/day/${String(Math.max(1, day - 1))}`);
+        },
+        onNavigateNext: () => {
+          navigateTo(`/day/${String(Math.min(totalDays, day + 1))}`);
+        },
+      }),
+    );
   }
 
   return view;

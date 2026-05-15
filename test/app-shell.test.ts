@@ -20,6 +20,7 @@ describe('app shell', () => {
 
     expect(shell.dataset.testid).toBe('app-shell');
     expect(shell.textContent).toContain('Schema v1');
+    expect(shell.querySelector('[data-testid="day-view"]')).not.toBeNull();
     expect(shell.querySelector('[data-testid="day-pager"]')).not.toBeNull();
   });
 
