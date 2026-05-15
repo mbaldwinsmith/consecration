@@ -181,32 +181,32 @@ This task plan translates `Plan.md` and `Architecture.md` into a phased, impleme
 ## Phase 4 — Mode Policy Engine (Guided, Lite, Custom)
 
 ### 4.1 Policy interfaces
-- [ ] Define `resolveDayPlan(mode, dayContent, missedDays, customRules)` contract.
-- [ ] Define completion criteria enum and estimation model.
+- [x] Define `resolveDayPlan(mode, dayContent, missedDays, customRules)` contract.
+- [x] Define completion criteria enum and estimation model.
 
 ### 4.2 Guided policy
-- [ ] Full-section inclusion logic.
-- [ ] Standard pacing metadata.
-- [ ] Gentle reminder hooks (no hard pressure copy).
+- [x] Full-section inclusion logic.
+- [x] Standard pacing metadata.
+- [x] Gentle reminder hooks (no hard pressure copy).
 
 ### 4.3 Lite policy
-- [ ] Essential-only section filtering.
-- [ ] Shortened reading strategy.
-- [ ] Enable auto-summary eligibility markers.
+- [x] Essential-only section filtering.
+- [x] Shortened reading strategy.
+- [x] Enable auto-summary eligibility markers.
 
 ### 4.4 Custom policy
-- [ ] User inclusion/exclusion rules.
-- [ ] Pacing window rules.
-- [ ] Validation to avoid impossible criteria.
+- [x] User inclusion/exclusion rules.
+- [x] Pacing window rules.
+- [x] Validation to avoid impossible criteria.
 
 ### 4.5 Policy tests
-- [ ] Snapshot tests for same input → same render plan.
-- [ ] Edge cases for missing optional sections.
+- [x] Snapshot tests for same input to same render plan.
+- [x] Edge cases for missing optional sections.
 
 **Phase 4 Exit Criteria**
-- [ ] Day render plan is policy-driven, not hard-coded in UI.
-- [ ] Mode switch does not mutate source content.
-- [ ] Completion criteria differ correctly across modes.
+- [x] Day render plan is policy-driven, not hard-coded in UI.
+- [x] Mode switch does not mutate source content.
+- [x] Completion criteria differ correctly across modes.
 
 ---
 
