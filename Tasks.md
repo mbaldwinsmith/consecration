@@ -272,24 +272,24 @@ This task plan translates `Plan.md` and `Architecture.md` into a phased, impleme
 ## Phase 7 — Reflections, Timeline, and Settings
 
 ### 7.1 Reflection module
-- [ ] Implement reflection store/service.
-- [ ] Add optional reflection prompt block in day view.
-- [ ] Ensure completion does not depend on reflection content.
+- [x] Implement reflection store/service.
+- [x] Add optional reflection prompt block in day view.
+- [x] Ensure completion does not depend on reflection content.
 
 ### 7.2 Timeline view
-- [ ] Build timeline entries for completions, phase milestones, reflections.
-- [ ] Add filters/toggles (e.g., hide streak metrics if desired).
+- [x] Build timeline entries for completions, phase milestones, reflections.
+- [x] Add filters/toggles (e.g., hide streak metrics if desired).
 
 ### 7.3 Settings
-- [ ] Theme (light/dark/system).
-- [ ] Motion and large text preferences.
-- [ ] Mode selection (guided/lite/custom).
-- [ ] Reminder time preferences.
+- [x] Theme (light/dark/system).
+- [x] Motion and large text preferences.
+- [x] Mode selection (guided/lite/custom).
+- [x] Reminder time preferences.
 
 **Phase 7 Exit Criteria**
-- [ ] Reflections are optional and persisted.
-- [ ] Timeline renders coherent journey history.
-- [ ] Settings immediately affect behavior and survive reload.
+- [x] Reflections are optional and persisted.
+- [x] Timeline renders coherent journey history.
+- [x] Settings immediately affect behavior and survive reload.
 
 ---
 

@@ -12,6 +12,10 @@ describe('storage adapters', () => {
       reduceMotion: true,
       largeText: true,
       consecrationId: 'montfort',
+      mode: 'lite',
+      reminderEnabled: true,
+      reminderTimeLocal: '07:30',
+      hideStreakMetrics: true,
     });
 
     expect(store.checkHealth()).toBe(true);
@@ -21,6 +25,10 @@ describe('storage adapters', () => {
       reduceMotion: true,
       largeText: true,
       consecrationId: 'montfort',
+      mode: 'lite',
+      reminderEnabled: true,
+      reminderTimeLocal: '07:30',
+      hideStreakMetrics: true,
     });
   });
 

@@ -14,7 +14,8 @@ describe('day view', () => {
       renderPlan: plan,
       totalDays: 33,
     });
-    const firstToggle = view.querySelector<HTMLButtonElement>('.section-toggle');
+    const firstToggle =
+      view.querySelector<HTMLButtonElement>('.section-toggle');
     const firstBody = view.querySelector<HTMLElement>('.section-body');
 
     expect(view.dataset.testid).toBe('day-view');
@@ -36,14 +37,48 @@ describe('day view', () => {
       onComplete,
       onUndo,
     });
-    const complete = control.querySelector<HTMLButtonElement>('.long-press-complete');
-    const undo = [...control.querySelectorAll('button')].find((button) => button.textContent === 'Undo');
+    const complete = control.querySelector<HTMLButtonElement>(
+      '.long-press-complete',
+    );
+    const undo = [...control.querySelectorAll('button')].find(
+      (button) => button.textContent === 'Undo',
+    );
 
-    complete?.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true }));
+    complete?.dispatchEvent(
+      new KeyboardEvent('keydown', { key: 'Enter', bubbles: true }),
+    );
     undo?.click();
 
     expect(onComplete).toHaveBeenCalledTimes(1);
     expect(onUndo).toHaveBeenCalledTimes(1);
+  });
+
+  it('saves optional reflection text without completing the day', () => {
+    const onSaveReflection = vi.fn();
+    const onComplete = vi.fn();
+    const dayContent = getBundledDayContent('montfort', 1);
+    const plan = resolveDayPlan({ mode: 'guided', dayContent, missedDays: 0 });
+    const view = createDayView({
+      dayContent,
+      renderPlan: plan,
+      totalDays: 33,
+      initialReflection: 'Earlier note',
+      onSaveReflection,
+      onComplete,
+    });
+    const textarea = view.querySelector<HTMLTextAreaElement>('#day-reflection');
+    const save = [...view.querySelectorAll('button')].find(
+      (button) => button.textContent === 'Save reflection',
+    );
+
+    expect(textarea?.value).toBe('Earlier note');
+    if (textarea !== null) {
+      textarea.value = 'A new note';
+    }
+    save?.click();
+
+    expect(onSaveReflection).toHaveBeenCalledWith('A new note');
+    expect(onComplete).not.toHaveBeenCalled();
   });
 
   it('does not complete on a short pointer tap', () => {
@@ -53,7 +88,9 @@ describe('day view', () => {
       holdMs: 500,
       onComplete,
     });
-    const complete = control.querySelector<HTMLButtonElement>('.long-press-complete');
+    const complete = control.querySelector<HTMLButtonElement>(
+      '.long-press-complete',
+    );
 
     complete?.dispatchEvent(new Event('pointerdown', { bubbles: true }));
     vi.advanceTimersByTime(200);

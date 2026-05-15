@@ -102,7 +102,7 @@ button:disabled {
   padding: 0 0.85rem;
 }
 
-.app-header nav button[aria-current="page"] {
+.app-header nav button[aria-current='page'] {
   border-color: var(--color-accent);
   color: var(--color-accent-strong);
 }
@@ -198,11 +198,11 @@ button:disabled {
 
 .section-toggle::after {
   float: right;
-  content: "+";
+  content: '+';
 }
 
-.section-toggle[aria-expanded="true"]::after {
-  content: "-";
+.section-toggle[aria-expanded='true']::after {
+  content: '-';
 }
 
 .section-body {
@@ -226,6 +226,69 @@ button:disabled {
 
 .long-press-complete {
   width: 100%;
+}
+
+.reflection-prompt,
+.timeline-filters {
+  display: grid;
+  gap: 0.65rem;
+  margin: 0;
+  padding: 1rem 0;
+  border: 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.reflection-prompt legend,
+.timeline-filters legend {
+  font-weight: 700;
+}
+
+.reflection-prompt label,
+.timeline-filters label {
+  color: var(--color-text);
+}
+
+.reflection-prompt textarea {
+  width: 100%;
+  min-height: 7rem;
+  resize: vertical;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-control);
+  padding: 0.8rem;
+  background: var(--color-canvas);
+  color: var(--color-text);
+  font: inherit;
+}
+
+.reflection-prompt textarea:focus-visible,
+.settings-panel input:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--color-accent) 55%, transparent);
+  outline-offset: 2px;
+}
+
+.timeline-view {
+  display: grid;
+  gap: 1rem;
+}
+
+.timeline-list {
+  display: grid;
+  gap: 0.85rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.timeline-item {
+  display: grid;
+  gap: 0.3rem;
+  padding: 0.85rem 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.timeline-item h3,
+.timeline-item p {
+  margin: 0;
 }
 
 .reveal-on-scroll {

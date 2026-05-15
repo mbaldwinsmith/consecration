@@ -1,8 +1,12 @@
 import type { BootSettings } from '../../app/settings';
 import {
   loadBootSettings,
+  persistHideStreakMetrics,
   persistLargeText,
   persistLastRoute,
+  persistMode,
+  persistReminderEnabled,
+  persistReminderTimeLocal,
   persistReduceMotion,
   persistTheme,
 } from '../../app/settings';
@@ -23,6 +27,10 @@ export class BootSettingsStore {
     persistLastRoute(settings.lastRoute, this.#storage);
     persistReduceMotion(settings.reduceMotion, this.#storage);
     persistLargeText(settings.largeText, this.#storage);
+    persistMode(settings.mode, this.#storage);
+    persistReminderEnabled(settings.reminderEnabled, this.#storage);
+    persistReminderTimeLocal(settings.reminderTimeLocal, this.#storage);
+    persistHideStreakMetrics(settings.hideStreakMetrics, this.#storage);
     this.#storage.setItem(
       'consecration.consecrationId',
       settings.consecrationId,
