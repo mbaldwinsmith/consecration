@@ -213,30 +213,30 @@ This task plan translates `Plan.md` and `Architecture.md` into a phased, impleme
 ## Phase 5 — Catch-up Engine and Missed-Day Summaries
 
 ### 5.1 Catch-up decision engine
-- [ ] Implement missed-day calculator.
-- [ ] Encode rule set:
-  - [ ] 0 missed: show current day
-  - [ ] +1: normal resume
-  - [ ] +2–3: catch-up options screen
-  - [ ] 4+: suggest temporary Lite mode
-- [ ] Output structured decisions for UI.
+- [x] Implement missed-day calculator.
+- [x] Encode rule set:
+  - [x] 0 missed: show current day
+  - [x] +1: normal resume
+  - [x] +2-3: catch-up options screen
+  - [x] 4+: suggest temporary Lite mode
+- [x] Output structured decisions for UI.
 
 ### 5.2 Summary generator
-- [ ] Implement metadata-driven summary generation using tagged key points.
-- [ ] Cap summary length for readability.
-- [ ] Ensure neutral, compassionate tone.
+- [x] Implement metadata-driven summary generation using tagged key points.
+- [x] Cap summary length for readability.
+- [x] Ensure neutral, compassionate tone.
 
 ### 5.3 Catch-up UI flow
-- [ ] Build `/catch-up` view with option cards:
-  - [ ] Catch up in one session
-  - [ ] Summarize missed days
-  - [ ] Switch temporarily to Lite
-- [ ] Persist selected path and route accordingly.
+- [x] Build `/catch-up` view with option cards:
+  - [x] Catch up in one session
+  - [x] Summarize missed days
+  - [x] Switch temporarily to Lite
+- [x] Persist selected path and route accordingly.
 
 **Phase 5 Exit Criteria**
-- [ ] Missed-day branching matches plan rules exactly.
-- [ ] Summaries can be generated offline from compiled artifacts.
-- [ ] No warning/penalty language in copy.
+- [x] Missed-day branching matches plan rules exactly.
+- [x] Summaries can be generated offline from compiled artifacts.
+- [x] No warning/penalty language in copy.
 
 ---
 

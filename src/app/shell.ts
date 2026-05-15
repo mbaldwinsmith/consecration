@@ -11,6 +11,7 @@ import {
   persistTheme,
 } from './settings';
 import type { ThemePreference } from '../types';
+import { createCatchUpView } from '../ui/views/catch-up-view';
 
 export interface AppShellOptions {
   readonly manifest: AppManifestPointer;
@@ -117,6 +118,10 @@ function createView(
 
   if (route.name === 'settings') {
     view.append(createSettingsControls(settings));
+  }
+
+  if (route.name === 'catch-up') {
+    view.append(createCatchUpView());
   }
 
   return view;

@@ -166,6 +166,31 @@ button:disabled {
   text-transform: capitalize;
 }
 
+.catch-up-options {
+  display: grid;
+  gap: 0.75rem;
+  max-width: 38rem;
+  margin-top: 0.5rem;
+}
+
+.catch-up-option {
+  display: grid;
+  height: auto;
+  min-height: 5rem;
+  padding: 1rem;
+  gap: 0.35rem;
+  text-align: left;
+}
+
+.catch-up-option strong,
+.catch-up-option span {
+  display: block;
+}
+
+.catch-up-option span {
+  color: var(--color-muted);
+}
+
 .bottom-actions {
   position: sticky;
   bottom: max(1rem, env(safe-area-inset-bottom));
