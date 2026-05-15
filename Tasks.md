@@ -151,30 +151,30 @@ This task plan translates `Plan.md` and `Architecture.md` into a phased, impleme
 ## Phase 3 — Progress Engine, Persistence, and Journey State
 
 ### 3.1 Storage adapters
-- [ ] Implement IndexedDB adapter for journey + reflections.
-- [ ] Implement localStorage adapter for boot-critical tiny settings.
-- [ ] Add storage health checks/fallback handling.
+- [x] Implement IndexedDB adapter for journey + reflections.
+- [x] Implement localStorage adapter for boot-critical tiny settings.
+- [x] Add storage health checks/fallback handling.
 
 ### 3.2 Progress store/service
-- [ ] Implement `progress-store.ts` CRUD for `UserJourneyState`.
-- [ ] Implement `progress-service.ts`:
-  - [ ] Mark day complete/uncomplete.
-  - [ ] Compute streak.
-  - [ ] Compute completion %.
-  - [ ] Compute phase progress markers.
-- [ ] Add idempotency protection for repeated completion events.
+- [x] Implement `progress-store.ts` CRUD for `UserJourneyState`.
+- [x] Implement `progress-service.ts`:
+  - [x] Mark day complete/uncomplete.
+  - [x] Compute streak.
+  - [x] Compute completion %.
+  - [x] Compute phase progress markers.
+- [x] Add idempotency protection for repeated completion events.
 
 ### 3.3 Migration strategy
-- [ ] Add startup migration runner keyed by `schemaVersion`.
-- [ ] Add migration test fixtures for at least v1→v2 evolution pattern.
+- [x] Add startup migration runner keyed by `schemaVersion`.
+- [x] Add migration test fixtures for at least v1-to-v2 evolution pattern.
 
 ### 3.4 Timeline service skeleton
-- [ ] Implement `timeline-service.ts` for completion milestones and reflection entries.
+- [x] Implement `timeline-service.ts` for completion milestones and reflection entries.
 
 **Phase 3 Exit Criteria**
-- [ ] Journey state survives reload/browser restart.
-- [ ] Completion and streak logic are deterministic under test.
-- [ ] Schema migration path exists and is tested.
+- [x] Journey state survives reload/browser restart.
+- [x] Completion and streak logic are deterministic under test.
+- [x] Schema migration path exists and is tested.
 
 ---
 
