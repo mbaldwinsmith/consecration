@@ -21,4 +21,4 @@ npm test
 npm run build
 ```
 
-`content:build` and `content:validate` are currently Phase 0 placeholders. They are wired into CI now so the Phase 2 content pipeline can replace the placeholder implementations without changing contributor workflow.
+`content:validate` checks markdown front matter, day sequencing, recurring prayer includes, and local asset links. `content:build` compiles validated markdown into `dist/content-index.json` and `dist/days/<consecration>/<day>.json`.

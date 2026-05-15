@@ -109,42 +109,42 @@ This task plan translates `Plan.md` and `Architecture.md` into a phased, impleme
 ## Phase 2 — Content Build Pipeline and Runtime Content Repository
 
 ### 2.1 Front matter schema and validation
-- [ ] Define schema for markdown metadata:
-  - [ ] `title`
-  - [ ] `phase`
-  - [ ] `author`
-  - [ ] `duration`
-  - [ ] `audio` (optional)
-  - [ ] `sectionType`
-  - [ ] tags/keys for summary extraction
-- [ ] Implement validator with strict errors and human-readable output.
+- [x] Define schema for markdown metadata:
+  - [x] `title`
+  - [x] `phase`
+  - [x] `author`
+  - [x] `duration`
+  - [x] `audio` (optional)
+  - [x] `sectionType`
+  - [x] tags/keys for summary extraction
+- [x] Implement validator with strict errors and human-readable output.
 
 ### 2.2 Markdown compiler
-- [ ] Implement `scripts/build-content.ts`:
-  - [ ] Parse markdown + front matter.
-  - [ ] Resolve recurring prayer references.
-  - [ ] Deduplicate recurring content IDs.
-  - [ ] Emit:
-    - [ ] `dist/content-index.json`
-    - [ ] `dist/days/<consecration>/<day>.json`
-- [ ] Implement `scripts/validate-content.ts` integrity checks:
-  - [ ] Missing day sequence detection.
-  - [ ] Invalid/circular include references.
-  - [ ] Missing asset links.
+- [x] Implement `scripts/build-content.ts`:
+  - [x] Parse markdown + front matter.
+  - [x] Resolve recurring prayer references.
+  - [x] Deduplicate recurring content IDs.
+  - [x] Emit:
+    - [x] `dist/content-index.json`
+    - [x] `dist/days/<consecration>/<day>.json`
+- [x] Implement `scripts/validate-content.ts` integrity checks:
+  - [x] Missing day sequence detection.
+  - [x] Invalid/circular include references.
+  - [x] Missing asset links.
 
 ### 2.3 Runtime content module
-- [ ] Implement `src/domain/content/content-types.ts`.
-- [ ] Implement `src/domain/content/content-index.ts` fast lookups.
-- [ ] Implement `src/domain/content/content-repository.ts` fetch by `consecrationId + day`.
+- [x] Implement `src/domain/content/content-types.ts`.
+- [x] Implement `src/domain/content/content-index.ts` fast lookups.
+- [x] Implement `src/domain/content/content-repository.ts` fetch by `consecrationId + day`.
 
 ### 2.4 Seed Montfort content pack
-- [ ] Add starter day files and recurring prayers in `/content/packs/montfort`.
-- [ ] Ensure at least first-week sample content compiles end-to-end.
+- [x] Add starter day files and recurring prayers in `/content/packs/montfort`.
+- [x] Ensure at least first-week sample content compiles end-to-end.
 
 **Phase 2 Exit Criteria**
-- [ ] Content scripts pass on clean repo.
-- [ ] Runtime can render compiled day payload from repository API.
-- [ ] Invalid front matter fails fast with actionable message.
+- [x] Content scripts pass on clean repo.
+- [x] Runtime can render compiled day payload from repository API.
+- [x] Invalid front matter fails fast with actionable message.
 
 ---
 

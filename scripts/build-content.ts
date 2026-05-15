@@ -1,5 +1,9 @@
-export function buildContent(): void {
-  console.log('content build placeholder: no content sources compiled yet');
-}
+import { buildContent } from './content-pipeline';
 
-buildContent();
+try {
+  await buildContent();
+  console.log('content build complete');
+} catch (error) {
+  console.error(error instanceof Error ? error.message : String(error));
+  process.exitCode = 1;
+}
